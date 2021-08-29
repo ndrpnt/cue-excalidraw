@@ -63,8 +63,8 @@ package types
 }
 
 #ExcalidrawTextElement: #ExcalidrawElementBase & {
-	type:            "text"
-	fontSize:        number | *20
+	type:     "text"
+	fontSize: number | *20
 	// Virgil = 1, Helvetica = 2, Cascadia = 3
 	fontFamily:      int & >=1 & <=3 | *1
 	text:            string
@@ -76,7 +76,7 @@ package types
 
 #ExcalidrawLineElement: #ExcalidrawElementBase & {
 	type: "line"
-	points: [#Point, #Point, ...#Point]
+	points: [[0, 0], #Point, ...#Point]
 	lastCommittedPoint: #Point | *null
 	startBinding:       #PointBinding | *null
 	endBinding:         #PointBinding | *null
@@ -87,7 +87,7 @@ package types
 
 #ExcalidrawArrowElement: #ExcalidrawElementBase & {
 	type: "arrow"
-	points: [#Point, #Point, ...#Point]
+	points: [[0, 0], #Point, ...#Point]
 	lastCommittedPoint: #Point | *null
 	startBinding:       #PointBinding | *null
 	endBinding:         #PointBinding | *null
